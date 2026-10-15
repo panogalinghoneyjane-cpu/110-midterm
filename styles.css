@@ -1,14 +1,8 @@
-/* =========================================================
-   ShelfSearch — styles.css
-   Shared styles for index.html (portfolio) and app.html (app)
-   ========================================================= */
-
-/* ---------- 1. Color variables ---------- */
 :root {
-  --green: #1f5f45;        /* CSU-inspired deep green */
+  --green: #1f5f45;        
   --green-dark: #164534;
   --gold: #e3b23c;
-  --bg: #f7f5ef;           /* warm paper color */
+  --bg: #f7f5ef;           
   --card: #ffffff;
   --text: #22252a;
   --muted: #6b7078;
@@ -19,7 +13,6 @@
   --shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
 }
 
-/* ---------- 2. Base ---------- */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
@@ -41,13 +34,11 @@ h2 { font-size: 1.8rem; margin-bottom: 1.5rem; text-align: center; }
 .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 16px; }
 .muted { color: var(--muted); }
 
-/* Hidden visually but readable by screen readers */
 .sr-only {
   position: absolute; width: 1px; height: 1px;
   overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
 }
 
-/* ---------- 3. Buttons ---------- */
 .btn {
   display: inline-block;
   background: var(--green);
@@ -71,7 +62,6 @@ h2 { font-size: 1.8rem; margin-bottom: 1.5rem; text-align: center; }
 .btn-gold { background: var(--gold); border-color: var(--gold); color: var(--text); }
 .btn-gold:hover { background: #c99a2a; }
 
-/* ---------- 4. Header & footer ---------- */
 .site-header {
   background: var(--card);
   border-bottom: 1px solid var(--border);
@@ -85,7 +75,6 @@ h2 { font-size: 1.8rem; margin-bottom: 1.5rem; text-align: center; }
 
 .site-footer { text-align: center; padding: 1.5rem 16px; color: var(--muted); font-size: 0.9rem; border-top: 1px solid var(--border); }
 
-/* ---------- 5. Portfolio page ---------- */
 .hero {
   background: linear-gradient(135deg, var(--green), var(--green-dark));
   color: #fff;
@@ -130,7 +119,6 @@ code { background: #f0ede4; padding: 0.1rem 0.35rem; border-radius: 4px; font-si
 
 .cta { text-align: center; }
 
-/* ---------- 6. App page: search ---------- */
 .app { padding-top: 2.5rem; padding-bottom: 3rem; }
 .search-panel { text-align: center; margin-bottom: 1.5rem; }
 .search-panel h1 { font-size: 2.2rem; color: var(--green); }
@@ -165,7 +153,6 @@ code { background: #f0ede4; padding: 0.1rem 0.35rem; border-radius: 4px; font-si
 }
 .chip:hover { border-color: var(--green); color: var(--green); }
 
-/* ---------- 7. Status messages ---------- */
 .status { text-align: center; margin: 1rem 0; min-height: 1.5rem; }
 .status.error {
   background: var(--error-bg);
@@ -186,7 +173,6 @@ code { background: #f0ede4; padding: 0.1rem 0.35rem; border-radius: 4px; font-si
 }
 @keyframes spin { to { transform: rotate(360deg); } }
 
-/* ---------- 8. Book cards ---------- */
 .results-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -222,11 +208,9 @@ code { background: #f0ede4; padding: 0.1rem 0.35rem; border-radius: 4px; font-si
 .book-actions { margin-top: auto; display: flex; gap: 0.4rem; padding-top: 0.5rem; }
 .book-actions .btn { flex: 1; padding: 0.4rem; font-size: 0.85rem; }
 
-/* ---------- 9. Pagination ---------- */
 .pagination { display: flex; justify-content: center; align-items: center; gap: 1rem; margin-top: 2rem; }
 .pagination[hidden] { display: none; }
 
-/* ---------- 10. Modal ---------- */
 .modal {
   position: fixed; inset: 0;
   background: rgba(0, 0, 0, 0.55);
@@ -255,7 +239,6 @@ code { background: #f0ede4; padding: 0.1rem 0.35rem; border-radius: 4px; font-si
 .subjects .chip { cursor: default; }
 .reading-item { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 0.7rem 0; border-bottom: 1px solid var(--border); }
 
-/* ---------- 11. Responsive ---------- */
 @media (max-width: 600px) {
   .search-form { flex-direction: column; }
   .detail { grid-template-columns: 1fr; }
