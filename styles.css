@@ -1,12 +1,12 @@
 :root {
-  --green: #1f5f45;        
-  --green-dark: #164534;
-  --gold: #e3b23c;
-  --bg: #f7f5ef;           
+  --green: #7a2e3a;        
+  --green-dark: #5a1f2a;
+  --gold: #c9a227;
+  --bg: #f8f3ea;           
   --card: #ffffff;
-  --text: #22252a;
-  --muted: #6b7078;
-  --border: #e2ddd0;
+  --text: #2a2220;
+  --muted: #7a6e66;
+  --border: #e6dccb;
   --error-bg: #fdecec;
   --error-text: #a12a2a;
   --radius: 12px;
@@ -60,7 +60,7 @@ h2 { font-size: 1.8rem; margin-bottom: 1.5rem; text-align: center; }
 .btn-outline { background: transparent; color: var(--green); }
 .btn-outline:hover { background: var(--green); color: #fff; }
 .btn-gold { background: var(--gold); border-color: var(--gold); color: var(--text); }
-.btn-gold:hover { background: #c99a2a; }
+.btn-gold:hover { background: #a8861c; }
 
 .site-header {
   background: var(--card);
@@ -87,7 +87,7 @@ h2 { font-size: 1.8rem; margin-bottom: 1.5rem; text-align: center; }
 .eyebrow { text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.8rem; opacity: 0.8; margin-bottom: 0.8rem; }
 
 .section { padding: 4rem 0; }
-.section-alt { background: #efece2; }
+.section-alt { background: #f0e6d6; }
 
 .card {
   background: var(--card);
@@ -105,7 +105,7 @@ h2 { font-size: 1.8rem; margin-bottom: 1.5rem; text-align: center; }
   gap: 1.5rem;
 }
 .feature-list { padding-left: 1.2rem; }
-code { background: #f0ede4; padding: 0.1rem 0.35rem; border-radius: 4px; font-size: 0.9em; }
+code { background: #f3ebde; padding: 0.1rem 0.35rem; border-radius: 4px; font-size: 0.9em; }
 
 .profile { text-align: center; }
 .avatar {
@@ -193,7 +193,7 @@ code { background: #f0ede4; padding: 0.1rem 0.35rem; border-radius: 4px; font-si
   aspect-ratio: 2 / 3;
   width: 100%;
   object-fit: cover;
-  background: #e9e4d6;
+  background: #ebe1d0;
 }
 .no-cover {
   aspect-ratio: 2 / 3;
