@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team ShelfSearch | Group Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <header class="site-header">
+    <nav class="nav container">
+      <a href="index.html" class="logo">📚 ShelfSearch</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#project">Project</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="app.html" class="btn btn-small">Open App</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== HERO / TEAM INTRODUCTION ===== -->
+    <section class="hero" id="about">
+      <div class="container hero-inner">
+        <p class="eyebrow">IT 110 Midterm Project · BSIT · Caraga State University</p>
+        <h1>Meet Team ShelfSearch</h1>
+        <p class="lead">
+          We are a group of BSIT students who love books and code. For our midterm
+          project, we built a web application that helps students find books
+          quickly using a real, public library database.
+        </p>
+        <a href="app.html" class="btn btn-large">Launch ShelfSearch App →</a>
+      </div>
+    </section>
+
+    <!-- ===== PROJECT DESCRIPTION ===== -->
+    <section class="section" id="project">
+      <div class="container">
+        <h2>Our Project</h2>
+        <div class="project-grid">
+          <div class="card">
+            <h3>What is ShelfSearch?</h3>
+            <p>
+              ShelfSearch is a single-page book search application. Users type a
+              title, author, or subject, and the app fetches matching books from the
+              <strong>Open Library API</strong>, showing covers, authors, publication
+              years, and descriptions.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Main Goal</h3>
+            <p>
+              To make finding academic and leisure reading materials fast and easy,
+              while practicing HTML, CSS, and JavaScript skills such as
+              <code>fetch()</code>, <code>async/await</code>, JSON parsing, DOM
+              manipulation, and error handling.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Key Features</h3>
+            <ul class="feature-list">
+              <li>Search by keyword, title, author, or subject</li>
+              <li>Book details with description (second API call)</li>
+              <li>"My Reading List" saved in the browser</li>
+              <li>Recent searches and pagination</li>
+              <li>Friendly error messages (offline, failed request, empty input)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TEAM PROFILES ===== -->
+    <section class="section section-alt" id="team">
+      <div class="container">
+        <h2>The Team</h2>
+        <div class="team-grid">
+
+          <!-- MEMBER 1 — replace name, photo, and bio -->
+          <article class="profile card">
+            <img src="images/member1.svg" alt="Photo of Member 1" class="avatar">
+            <h3>Lindy Cabilan</h3>
+            <p class="role">JavaScript Logic &amp; API Integration</p>
+            <p>
+              Wrote the fetch/async-await code that connects to the Open Library API,
+              parses the JSON response, and handles errors.
+            </p>
+          </article>
+
+          <!-- MEMBER 2 -->
+          <article class="profile card">
+            <img src="images/member2.svg" alt="Photo of Member 2" class="avatar">
+            <h3>Honey Jane E. Panogaling</h3>
+            <p class="role">HTML Structure &amp; CSS Styling</p>
+            <p>
+              Built the semantic page structure and designed the responsive layout,
+              colors, and book cards for desktop and mobile.
+            </p>
+          </article>
+
+          <!-- MEMBER 3 -->
+          <article class="profile card">
+            <img src="images/member3.svg" alt="Photo of Member 3" class="avatar">
+            <h3>Santhia Faye D. Perlado</h3>
+            <p class="role">Project Management &amp; Documentation</p>
+            <p>
+              Planned tasks and deadlines, managed the GitHub repository, wrote the
+              README, and coded the reading list feature.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CALL TO ACTION ===== -->
+    <section class="section cta">
+      <div class="container">
+        <h2>Ready to find your next book?</h2>
+        <a href="app.html" class="btn btn-large">Go to ShelfSearch →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Team ShelfSearch · IT 110 Midterm Project · Data from
+      <a href="https://openlibrary.org/developers/api" target="_blank" rel="noopener">Open Library</a></p>
+  </footer>
+
+</body>
+</html>
