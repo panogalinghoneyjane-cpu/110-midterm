@@ -1,18 +1,12 @@
-=====================================================
- SHELFSEARCH — IT 110 Midterm Project
-=====================================================
-
-GROUP NAME:  Team ShelfSearch
+GROUP NAME:  Dunkin
 
 MEMBERS & ROLES:
-  1. Member 1 Name — JavaScript Logic & API Integration
-  2. Member 2 Name — HTML Structure & Semantics, CSS Styling & Layout
-  3. Member 3 Name — Project Management & Documentation
-  (All members contributed to the code.)
+  1. Rose Lindy A. Cabilan — JavaScript Logic & API Integration
+  2. Honey Jane E. Panogaling — HTML Structure & Semantics, CSS Styling & Layout
+  3. Santhia Faye D. Perlado — Project Management & Documentation
+  
+PROJECT DESCRIPTION
 
------------------------------------------------------
- PROJECT DESCRIPTION
------------------------------------------------------
 ShelfSearch is a single-page application (SPA) that lets users
 search for books by keyword, title, author, or subject. Results
 show the cover, title, author, and first publication year. Users
@@ -21,9 +15,8 @@ recent searches, and browse results page by page.
 
 Category: Others — Book Search / Library Application
 
------------------------------------------------------
- API USED
------------------------------------------------------
+API USED
+
 Name:           Open Library API (by the Internet Archive)
 Documentation:  https://openlibrary.org/developers/api
 Endpoints used:
@@ -34,9 +27,8 @@ Endpoints used:
                  https://openlibrary.org/dev/docs/api/covers
 No API key is required.
 
------------------------------------------------------
- FILES
------------------------------------------------------
+FILES
+
   index.html   - Group portfolio homepage
   app.html     - Main ShelfSearch application
   styles.css   - Styles for both pages
@@ -44,9 +36,8 @@ No API key is required.
   images/      - Team member photos
   README.txt   - This file
 
------------------------------------------------------
- HOW TO RUN
------------------------------------------------------
+HOW TO RUN
+
 1. Download or clone this repository.
 2. Open index.html in any modern web browser
    (Chrome, Edge, Firefox).
@@ -56,9 +47,8 @@ No API key is required.
 Optional: In VS Code, install the "Live Server" extension,
 right-click index.html, and choose "Open with Live Server".
 
------------------------------------------------------
- FEATURES
------------------------------------------------------
+FEATURES
+
 Required:
   - Input field + search type dropdown + search button
   - fetch() with async/await to call the Open Library API
