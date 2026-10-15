@@ -1,16 +1,8 @@
-/* =========================================================
-   ShelfSearch — script.js
-   Book search app using the Open Library API
-   API docs: https://openlibrary.org/developers/api
-   ========================================================= */
-
-// ---------- 1. Constants ----------
 const SEARCH_URL = "https://openlibrary.org/search.json";
-const WORK_URL = "https://openlibrary.org";              // + /works/OL...W.json
-const COVER_URL = "https://covers.openlibrary.org/b/id"; // + /{cover_id}-M.jpg
+const WORK_URL = "https://openlibrary.org";              
+const COVER_URL = "https://covers.openlibrary.org/b/id"; 
 const RESULTS_PER_PAGE = 12;
 
-// ---------- 2. Get elements from the page (DOM) ----------
 const searchForm = document.getElementById("searchForm");
 const searchInput = document.getElementById("searchInput");
 const searchType = document.getElementById("searchType");
@@ -28,16 +20,12 @@ const modalClose = document.getElementById("modalClose");
 const readingListBtn = document.getElementById("readingListBtn");
 const readingCount = document.getElementById("readingCount");
 
-// ---------- 3. App state ----------
 let currentQuery = "";
 let currentType = "q";
 let currentPage = 1;
 let totalResults = 0;
-let lastBooks = [];   // books currently on screen
+let lastBooks = [];   
 
-// ---------- 4. Helper functions ----------
-
-// Prevents text from the API from being treated as HTML (security)
 function escapeHTML(text) {
   const div = document.createElement("div");
   div.textContent = text ?? "";
@@ -67,7 +55,6 @@ function coverImage(coverId, size, title) {
   return `<div class="no-cover">${escapeHTML(title)}</div>`;
 }
 
-// Turns technical errors into user-friendly messages
 function friendlyError(error) {
   if (!navigator.onLine) {
     return "You appear to be offline. Please check your internet connection and try again.";
@@ -78,7 +65,6 @@ function friendlyError(error) {
   return "Could not fetch data. Please try again.";
 }
 
-// fetch() with a 15-second timeout, returns parsed JSON
 async function fetchJSON(url) {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), 15000);
@@ -93,9 +79,7 @@ async function fetchJSON(url) {
   }
 }
 
-// ---------- 5. MAIN FEATURE: search books ----------
 async function searchBooks(query, type, page = 1) {
-  // Build the API URL, e.g. search.json?title=rizal&page=1&limit=12
   const params = new URLSearchParams({
     [type]: query,
     page: page,
@@ -135,7 +119,6 @@ async function searchBooks(query, type, page = 1) {
   }
 }
 
-// ---------- 6. Show results on the page (DOM update) ----------
 function displayBooks(books) {
   resultsBox.innerHTML = books.map((book, index) => {
     const author = book.author_name ? book.author_name.slice(0, 2).join(", ") : "Unknown author";
@@ -167,15 +150,12 @@ function updatePagination(totalPages) {
   nextBtn.disabled = currentPage >= totalPages;
 }
 
-// ---------- 7. SECOND API CALL: book details ----------
 async function showBookDetails(book) {
   openModal(`<div class="status"><div class="spinner"></div><p>Loading details...</p></div>`);
 
   try {
-    // e.g. https://openlibrary.org/works/OL45804W.json
     const work = await fetchJSON(`${WORK_URL}${book.key}.json`);
 
-    // description can be a string OR an object { value: "..." }
     let description = "No description available for this book.";
     if (typeof work.description === "string") description = work.description;
     else if (work.description?.value) description = work.description.value;
@@ -216,7 +196,6 @@ function closeModal() {
   modalContent.innerHTML = "";
 }
 
-// ---------- 8. EXTRA FEATURE: Reading list (localStorage) ----------
 function getReadingList() {
   try {
     return JSON.parse(localStorage.getItem("readingList")) || [];
@@ -229,7 +208,6 @@ function setReadingList(list) {
   try {
     localStorage.setItem("readingList", JSON.stringify(list));
   } catch {
-    /* storage may be blocked; app still works without it */
   }
   readingCount.textContent = list.length;
 }
@@ -250,7 +228,7 @@ function toggleReadingList(book) {
     });
   }
   setReadingList(list);
-  displayBooks(lastBooks); // refresh buttons
+  displayBooks(lastBooks); 
 }
 
 function showReadingList() {
@@ -272,7 +250,6 @@ function showReadingList() {
   `);
 }
 
-// ---------- 9. EXTRA FEATURE: Recent searches ----------
 function getRecent() {
   try {
     return JSON.parse(localStorage.getItem("recentSearches")) || [];
@@ -285,7 +262,7 @@ function saveRecentSearch(query, type) {
   let recent = getRecent().filter(r => r.query.toLowerCase() !== query.toLowerCase());
   recent.unshift({ query, type });
   recent = recent.slice(0, 5);
-  try { localStorage.setItem("recentSearches", JSON.stringify(recent)); } catch { /* ignore */ }
+  try { localStorage.setItem("recentSearches", JSON.stringify(recent)); } catch { }
   renderRecent();
 }
 
@@ -299,9 +276,6 @@ function renderRecent() {
     recent.map((r, i) => `<button class="chip" data-recent="${i}">${escapeHTML(r.query)}</button>`).join("");
 }
 
-// ---------- 10. Event listeners ----------
-
-// Search form submit — with input validation
 searchForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const query = searchInput.value.trim();
@@ -324,7 +298,6 @@ searchForm.addEventListener("submit", (event) => {
 
 searchInput.addEventListener("input", () => searchInput.classList.remove("invalid"));
 
-// Buttons inside book cards (event delegation)
 resultsBox.addEventListener("click", (event) => {
   const button = event.target.closest("button[data-action]");
   if (!button) return;
@@ -333,7 +306,6 @@ resultsBox.addEventListener("click", (event) => {
   if (button.dataset.action === "save") toggleReadingList(book);
 });
 
-// Pagination
 prevBtn.addEventListener("click", () => {
   searchBooks(currentQuery, currentType, currentPage - 1);
   window.scrollTo({ top: 0, behavior: "smooth" });
@@ -343,7 +315,6 @@ nextBtn.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
-// Recent search chips
 recentBox.addEventListener("click", (event) => {
   const chip = event.target.closest("[data-recent]");
   if (!chip) return;
@@ -353,7 +324,6 @@ recentBox.addEventListener("click", (event) => {
   searchBooks(r.query, r.type, 1);
 });
 
-// Reading list
 readingListBtn.addEventListener("click", showReadingList);
 modalContent.addEventListener("click", (event) => {
   const removeBtn = event.target.closest("[data-remove]");
@@ -363,16 +333,13 @@ modalContent.addEventListener("click", (event) => {
   showReadingList();
 });
 
-// Close modal: X button, clicking outside, or Escape key
 modalClose.addEventListener("click", closeModal);
 modal.addEventListener("click", (event) => { if (event.target === modal) closeModal(); });
 document.addEventListener("keydown", (event) => { if (event.key === "Escape" && !modal.hidden) closeModal(); });
 
-// Internet connection changes
 window.addEventListener("offline", () => showError("You are offline. Searches will not work until your connection returns."));
 window.addEventListener("online", () => showInfo("Back online! You can search again."));
 
-// ---------- 11. Start the app ----------
 readingCount.textContent = getReadingList().length;
 renderRecent();
 showInfo("Type a keyword above to start searching.");
