@@ -24,7 +24,6 @@
 
   <main class="container app">
 
-    <!-- ===== SEARCH FORM (user input) ===== -->
     <section class="search-panel">
       <h1>Find a Book</h1>
       <p class="muted">Search millions of books from the Open Library database.</p>
@@ -44,17 +43,13 @@
         <button type="submit" class="btn" id="searchBtn">Search</button>
       </form>
 
-      <!-- Recent searches (filled by JavaScript) -->
       <div id="recentSearches" class="recent"></div>
     </section>
 
-    <!-- ===== STATUS MESSAGES (loading / errors / result count) ===== -->
     <div id="status" class="status" role="status" aria-live="polite"></div>
 
-    <!-- ===== RESULTS (filled by JavaScript) ===== -->
     <section id="results" class="results-grid"></section>
 
-    <!-- ===== PAGINATION ===== -->
     <div id="pagination" class="pagination" hidden>
       <button type="button" id="prevBtn" class="btn btn-outline">← Previous</button>
       <span id="pageInfo"></span>
@@ -62,7 +57,6 @@
     </div>
   </main>
 
-  <!-- ===== BOOK DETAILS MODAL ===== -->
   <div id="modal" class="modal" hidden>
     <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
       <button type="button" class="modal-close" id="modalClose" aria-label="Close">×</button>
