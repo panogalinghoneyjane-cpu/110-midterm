@@ -1,4 +1,4 @@
-GROUP NAME:  Dunkin
+GROUP NAME:  QuiteNook
 
 MEMBERS & ROLES:
   1. Rose Lindy A. Cabilan — JavaScript Logic & API Integration
